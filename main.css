@@ -1,0 +1,74 @@
+/*****************/
+/** BASE STYLES **/
+/*****************/
+
+body {
+  font-family: 'Maven Pro', sans-serif;
+  background-color: #ecf0f1;
+}
+
+.container {
+  max-width: 960px;
+  margin: 10px auto;
+  text-align: center;
+}
+/*****************/
+/***** HEADER  ***/
+/*****************/
+
+header {
+  background-color: #1abc9c;
+  height: auto;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.content {
+  color: #2c3e50
+}
+
+/*****************/
+/** CALCUlATOR  **/
+/*****************/
+
+.calc-box {
+  background-color: #3498db;
+  display: inline-block;
+  width: 350px;
+  border-radius: 10px;
+}
+
+.calc-display {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 2em;
+}
+
+.button-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.button-container .row {
+  display: inline-flex;
+}
+
+.calc-button {
+  /*height: 20px;
+  width: 20px;*/
+  /*margin: 10px;*/
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 20px 0;
+}
+
+.col {
+  width: 25%;
+}
+
+.row {
+  height: 20px;
+}
