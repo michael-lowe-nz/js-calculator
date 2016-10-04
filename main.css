@@ -9,6 +9,7 @@ body {
   font-family: 'Maven Pro', sans-serif;
   background-color: #ecf0f1;
   -webkit-user-select: none;
+  height: 100%;
 }
 
 .container {
@@ -16,6 +17,7 @@ body {
   margin: 10px auto;
   text-align: center;
 }
+
 /*****************/
 /***** HEADER  ***/
 /*****************/
@@ -68,14 +70,13 @@ header {
 }
 
 .calc-button {
-  /*height: 20px;
-  width: 20px;*/
-  /*margin: 10px;*/
   background-color: white;
   color: #2980b9;
   border-radius: 10px;
-  padding: 15px 0;
+  padding: 10px 0;
   user-select: none;
+  font-weight: 700;
+  font-size: 1.4em;
 }
 
 .calc-button:hover {
