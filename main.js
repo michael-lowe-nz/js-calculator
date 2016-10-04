@@ -22,9 +22,7 @@ function buttonPress(button){
 
 function setButtonListeners(){
   // var buttonVals = ['0','1','2','3','4','5','6','7','8','9','add','subtract','multiply','divide','decimal','clear'];
-  document.getElementById('1').addEventListener("click",function(){
-
-  });
+  document.getElementById('1').addEventListener("click",function(){console.log("1 button pushed");});
   document.getElementById('2').addEventListener("click",function(){console.log("2 button pushed");});
   document.getElementById('3').addEventListener("click",function(){console.log("3 button pushed");});
   document.getElementById('4').addEventListener("click",function(){console.log("4 button pushed");});
