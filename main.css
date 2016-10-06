@@ -27,11 +27,20 @@ header {
   height: auto;
   color: white;
   text-align: center;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .content {
   color: #2c3e50
+}
+
+@media (max-width: 600px){
+  #header {
+    font-size: 1.3em;
+  }
+  #tag-line {
+    display: none;
+  }
 }
 
 /*****************/
@@ -54,6 +63,12 @@ header {
   color: #16a085;
   letter-spacing: 3px;
   text-align: right;
+}
+
+@media (max-width: 600px){
+  .calc-display {
+    font-size: 1.3em;
+  }
 }
 
 .calc-display:active {
