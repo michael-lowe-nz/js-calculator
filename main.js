@@ -78,9 +78,11 @@ function swapNums(){
 function calculate(){
   console.log("I'm Calculating!...");
   switch (currentOperation){
-    case "add": currentNum = +currentNum + +previousNum;
+    case "add": currentNum = +previousNum + +currentNum;
     display(currentNum);
-    console.log("calc gives: "+currentNum);
+    previousNum = currentNum;
+    currentNum = "";
+    case "subtract": currentNum = previousNum - currentNum;
     break;
     default: return;
   }
