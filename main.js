@@ -12,11 +12,9 @@ $(document).ready(function(){
 });
 
 function display(val){
+  val = val.toString();
+  val = val.substring(0,displayLimit);
   $(".calc-display").html(val);
-}
-
-function getDisplay(){
-  return currentNum;
 }
 
 function clear(){
@@ -34,15 +32,12 @@ function setButtonListeners(){ // Think about this approach when refactoring
     (function () {
       var currentButton = buttonVals[i];
       document.getElementById(currentButton).addEventListener("click", function(){
-        console.log("ID: "+this.id);
         var current = this.id;
         if (isNaN(current)){ // if its not a number, e.g. multiply, add
           switch (current) {
             case 'add': addition();
-            console.log('add from switch');
             break;
             case 'subtract': subtraction();
-            console.log('subtract from switch');
             break;
             case 'multiply': multiplication();
             break;
