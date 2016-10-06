@@ -1,29 +1,31 @@
-var toDisplay = "";
+/** Defining global variable **/
 var currentNum = "";
-var nextNum = "";
+var previousNum = "";
 var currentOperation = "";
-var displayLimit = 6;
+var operating = false;
+var displayLimit = 12;
 
-
+/** Executes when the document is ready **/
 $(document).ready(function(){
-  display("Hi there");
+  display("Hey There!");
   setButtonListeners();
 });
 
 function display(val){
-  console.log("Displaying...");
   $(".calc-display").html(val);
 }
 
-function calculate(){
-
+function getDisplay(){
+  return currentNum;
 }
 
-function buttonClick(){
-  console.log("button clicked")
-  console.log("it was this button: "+this.id);
-  return this.id;
+function clear(){
+  currentNum = "";
+  previousNum = "";
+  currentOperation = "";
+  display("0");
 }
+
 
 
 function setButtonListeners(){ // Think about this approach when refactoring
@@ -35,13 +37,30 @@ function setButtonListeners(){ // Think about this approach when refactoring
         console.log("ID: "+this.id);
         var current = this.id;
         if (isNaN(current)){ // if its not a number, e.g. multiply, add
-          //add switch statements
-          addition();
+          switch (current) {
+            case 'add': addition();
+            console.log('add from switch');
+            break;
+            case 'subtract': subtraction();
+            console.log('subtract from switch');
+            break;
+            case 'multiply': multiplication();
+            break;
+            case 'divide': division();
+            break;
+            case 'decimal': decimal();
+            break;
+            case 'clear': clear();
+            break;
+            case 'equals': calculate();
+            break;
+            default: return;
+          }
+
         }
         else {
           if (currentNum.length < displayLimit){
             currentNum =  currentNum + current;
-            console.log("currentNum:"+currentNum);
             display(currentNum);
           }
         }
@@ -51,6 +70,75 @@ function setButtonListeners(){ // Think about this approach when refactoring
   // document.getElementById('1').addEventListener("click",function(){console.log("1 button pushed");});
 }
 
+function swapNums(){
+  previousNum = currentNum;
+  currentNum = "";
+}
+
+function calculate(){
+  console.log("I'm Calculating!...");
+  switch (currentOperation){
+    case "add": currentNum = +currentNum + +previousNum;
+    display(currentNum);
+    console.log("calc gives: "+currentNum);
+    break;
+    default: return;
+  }
+  return 'some calculation...';
+}
+
 function addition(){
-  console.log("Addition function exec.");
+  if (currentOperation === ""){
+    swapNums();
+    currentOperation = "add";
+    display("+");
+  }
+  else {
+    calculate();
+    currentOperation = "add";
+  }
+}
+
+function subtraction(){
+  if (currentOperation === ""){
+    swapNums();
+    currentOperation = "subtract";
+    display("-");
+  }
+  else {
+    calculate();
+    currentOperation = "subtract";
+  }
+}
+
+function multiplication(){
+  if (currentOperation === ""){
+    swapNums();
+    currentOperation = "multply";
+    display("x");
+  }
+  else {
+    calculate();
+    currentOperation = "multiply";
+  }
+}
+function division(){
+  if (currentOperation === ""){
+    swapNums();
+    currentOperation = "add";
+    display("&divide");
+  }
+  else {
+    calculate();
+    currentOperation = "divide";
+  }
+}
+
+function decimal(){
+  if (currentNum.length < displayLimit){
+    if (!currentNum.includes(".")){
+      currentNum = currentNum + ".";
+      display(currentNum);
+    }
+  }
 }
