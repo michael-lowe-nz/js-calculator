@@ -76,17 +76,34 @@ function swapNums(){
 }
 
 function calculate(){
-  console.log("I'm Calculating!...");
   switch (currentOperation){
-    case "add": currentNum = +previousNum + +currentNum;
-    display(currentNum);
-    previousNum = currentNum;
-    currentNum = "";
-    case "subtract": currentNum = previousNum - currentNum;
-    break;
+    case "add":
+      currentNum = +previousNum + +currentNum;
+      display(currentNum);
+      previousNum = currentNum;
+      currentNum = "";
+      break;
+    case "subtract":
+      currentNum = previousNum - currentNum;
+      display(currentNum);
+      previousNum = currentNum;
+      currentNum = "";
+      break;
+    case "divide":
+      console.log("switch divide");
+      currentNum = previousNum / currentNum;
+      display(currentNum);
+      previousNum = currentNum;
+      currentNum = "";
+      break;
+    case "multiply":
+      currentNum = previousNum * currentNum;
+      display(currentNum);
+      previousNum = currentNum;
+      currentNum = "";
+      break;
     default: return;
   }
-  return 'some calculation...';
 }
 
 function addition(){
@@ -94,6 +111,10 @@ function addition(){
     swapNums();
     currentOperation = "add";
     display("+");
+  }
+  else if(currentNum === ""){
+    currentOperation = "add";
+    display ("+");
   }
   else {
     calculate();
@@ -107,6 +128,10 @@ function subtraction(){
     currentOperation = "subtract";
     display("-");
   }
+  else if(currentNum === ""){
+    currentOperation = "subtract";
+    display ("-");
+  }
   else {
     calculate();
     currentOperation = "subtract";
@@ -116,19 +141,28 @@ function subtraction(){
 function multiplication(){
   if (currentOperation === ""){
     swapNums();
-    currentOperation = "multply";
+    currentOperation = "multiply";
     display("x");
+  }
+  else if(currentNum === ""){
+    currentOperation = "multiply";
+    display ("x");
   }
   else {
     calculate();
     currentOperation = "multiply";
   }
 }
+
 function division(){
   if (currentOperation === ""){
     swapNums();
-    currentOperation = "add";
+    currentOperation = "divide";
     display("&divide");
+  }
+  else if(currentNum === ""){
+    currentOperation = "divide";
+    display ("&divide");
   }
   else {
     calculate();
