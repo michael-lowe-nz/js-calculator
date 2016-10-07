@@ -65,11 +65,11 @@ header {
   text-align: right;
 }
 
-@media (max-width: 600px){
+/*@media (max-width: 600px){
   .calc-display {
     font-size: 1.3em;
   }
-}
+}*/
 
 .calc-display:active {
   box-shadow: 0 5px #666;
