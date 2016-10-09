@@ -39,9 +39,9 @@ function setButtonListeners(){ // Think about this approach when refactoring
             break;
             case 'subtract': applyOperation("subtract","-");
             break;
-            case 'multiply': multiplication();
+            case 'multiply': applyOperation("multiply","x");
             break;
-            case 'divide': division();
+            case 'divide': applyOperation("divide","&divide");
             break;
             case 'decimal': decimal();
             break;
@@ -114,22 +114,6 @@ function applyOperation(currentOperationSet,operationDisplay){
     calculate();
     currentOperation = currentOperationSet
   }
-}
-
-// function addition(){
-//   applyOperation("add","+");
-// }
-
-function subtraction(){
-
-}
-
-function multiplication(){
-  applyOperation("multiply","x");
-}
-
-function division(){
-  applyOperation("divide","&divide");
 }
 
 function decimal(){
