@@ -51,7 +51,6 @@ function setButtonListeners(){ // Think about this approach when refactoring
             break;
             default: return;
           }
-
         }
         else {
           if (currentNum.length < displayLimit){
