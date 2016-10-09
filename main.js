@@ -100,20 +100,24 @@ function calculate(){
   }
 }
 
-function addition(){
+function applyOperation(currentOperationSet,operationDisplay){
   if (currentOperation === ""){
     swapNums();
-    currentOperation = "add";
-    display("+");
+    currentOperation = currentOperationSet;
+    display(operationDisplay);
   }
-  else if(currentNum === ""){
-    currentOperation = "add";
-    display ("+");
+  else if (currentNum === ""){
+    currentOperation = currentOperationSet;
+    display(opeationDisplay);
   }
   else {
     calculate();
-    currentOperation = "add";
+    currentOperation = currentOperationSet
   }
+}
+
+function addition(){
+  applyOperation("add","+");
 }
 
 function subtraction(){
