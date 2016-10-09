@@ -121,19 +121,7 @@ function addition(){
 }
 
 function subtraction(){
-  if (currentOperation === ""){
-    swapNums();
-    currentOperation = "subtract";
-    display("-");
-  }
-  else if(currentNum === ""){
-    currentOperation = "subtract";
-    display ("-");
-  }
-  else {
-    calculate();
-    currentOperation = "subtract";
-  }
+  applyOperation("subtract","-");
 }
 
 function multiplication(){
