@@ -125,35 +125,11 @@ function subtraction(){
 }
 
 function multiplication(){
-  if (currentOperation === ""){
-    swapNums();
-    currentOperation = "multiply";
-    display("x");
-  }
-  else if(currentNum === ""){
-    currentOperation = "multiply";
-    display ("x");
-  }
-  else {
-    calculate();
-    currentOperation = "multiply";
-  }
+  applyOperation("multiply","x");
 }
 
 function division(){
-  if (currentOperation === ""){
-    swapNums();
-    currentOperation = "divide";
-    display("&divide");
-  }
-  else if(currentNum === ""){
-    currentOperation = "divide";
-    display ("&divide");
-  }
-  else {
-    calculate();
-    currentOperation = "divide";
-  }
+  applyOperation("divide","&divide");
 }
 
 function decimal(){
