@@ -35,9 +35,9 @@ function setButtonListeners(){ // Think about this approach when refactoring
         var current = this.id;
         if (isNaN(current)){ // if its not a number, e.g. multiply, add
           switch (current) {
-            case 'add': addition();
+            case 'add': applyOperation("add","+");
             break;
-            case 'subtract': subtraction();
+            case 'subtract': applyOperation("subtract","-");
             break;
             case 'multiply': multiplication();
             break;
@@ -116,12 +116,12 @@ function applyOperation(currentOperationSet,operationDisplay){
   }
 }
 
-function addition(){
-  applyOperation("add","+");
-}
+// function addition(){
+//   applyOperation("add","+");
+// }
 
 function subtraction(){
-  applyOperation("subtract","-");
+
 }
 
 function multiplication(){
